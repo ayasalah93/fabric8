@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:  
+  name: vscode  
+  labels:    
+  run: vscode
+spec:  
+  replicas: 2  
+  template:    
+    metadata:      
+      labels:        
+        run: vscode    
+    spec:      
+      containers:      
+      - name: vscode        
+        image: cmiles74/docker-vscode    
+    ports:        
+      - containerPort: 5000
+        protocol: TCP
