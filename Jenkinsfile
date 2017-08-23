@@ -4,7 +4,7 @@ node {
 		checkout scm
 	}
 	stage('Build image') {
-		app = docker.pull("cmiles74/docker-vscode")
+		sh "docker pull cmiles74/docker-vscode"
 		app = docker.build("ayasalah93/voda")
 	}
 	stage('Test image') {
